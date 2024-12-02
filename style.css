@@ -1,0 +1,637 @@
+/* Global Styles */
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Default font */
+    line-height: 20px;
+    font-size: 18px;
+}
+
+/* Font Poppins untuk penggunaan khusus */
+@font-face {
+    font-family: 'Poppins';
+    src: url('asset/font/Poppins-Bold.otf'); /* Menyertakan font Poppins */
+}
+
+/* Heading Style */
+.layar-dalam h3 {
+    font-family: 'Poppins';
+    font-size: 30px;
+
+}
+
+/* General HTML Settings */
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Menambahkan efek scroll yang mulus */
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Wrapper for inner content */
+.layar-dalam {
+    width: 1000px;
+    margin: auto; /* Membuat konten berada di tengah */
+}
+
+/* Full-width container */
+.layar-penuh {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar Styles */
+nav {
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 80px;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Efek transisi untuk warna dan bayangan */
+}
+
+nav.putih {
+    background-color: #fff; /* Navbar putih */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan saat di-scroll */
+}
+
+nav .logo {
+    float: left;
+    position: relative;
+    padding: 15px 10px;
+    line-height: 55px;
+    text-align: center;
+}
+
+nav .logo img {
+    vertical-align: middle;
+    width: 120px;
+    transition: filter 0.5s ease; /* Transisi untuk perubahan warna logo */
+}
+
+nav .menu {
+    float: right;
+    margin-right: 60px;
+    height: 30px;
+    padding: 35px 20px;
+    max-width: 600px;
+}
+
+nav .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .menu ul li {
+    list-style-type: none;
+    float: left;
+    line-height: 60px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-align: center;
+    padding: 0px 40px;
+    font-family: 'Poppins';
+    text-decoration: none;
+    transition: color 0.5s ease; /* Transisi untuk warna teks */
+}
+
+nav.putih ul li a {
+    color: #333; /* Ubah warna teks menjadi gelap pada latar putih */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Hover effect for navigation links */
+}
+
+/* Tambahkan JavaScript untuk efek scroll */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Header Styles */
+header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+}
+
+header .intro {
+    z-index: 100px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+header .intro h3 {
+    font-size: 50px;
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+
+/* Button Styles */
+.tombol {
+    background-color: #007c17;
+    height: 40px;
+    line-height: 42px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+/* Overlay for header */
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 60%;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======== Menu pada Layar Kecil ======== */
+
+/* Sembunyikan menu di layar kecil */
+nav .menu ul {
+    display: none; /* Menu hanya muncul saat tombol ditekan */
+    flex-direction: column;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    position: absolute; /* Menu melayang di bawah tombol */
+    top: 60px; /* Posisi di bawah header */
+    right: 10px; /* Tepat di sisi kanan layar */
+    width: 200px; /* Lebar menu */
+    border-radius: 8px; /* Sudut menu melengkung */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+    z-index: 999; /* Pastikan menu di atas elemen lain */
+}
+
+/* Tampilkan menu pada klik tombol burger */
+.tombol-menu.active + ul {
+    display: flex; /* Tampilkan menu */
+}
+
+
+nav .menu ul li a {
+    text-decoration: none; /* Hilangkan garis bawah */
+    color: #fff; /* Warna teks putih */
+    font-size: 20px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px; /* Sudut item melengkung */
+    transition: background-color 0.3s ease; /* Efek hover */
+}
+
+/* Efek hover item menu */
+nav .menu ul li a:hover {
+    background-color: #4CAF50; /* Warna hijau saat dihover */
+    color: #fff; /* Tetap putih */
+}
+
+/* ======== Tombol Menu (Burger Button) ======== */
+
+.tombol-menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    display: flex; /* Bentuk tombol fleksibel */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer; /* Ubah kursor menjadi tangan */
+    z-index: 1000; /* Di atas menu */
+}
+
+/* Garis dalam tombol burger */
+.tombol-menu .garis {
+    height: 3px;
+    width: 100%; /* Lebar penuh */
+    background-color: #fff;
+    transition: all 0.3s ease; /* Animasi efek klik */
+}
+
+/* Tombol aktif (efek X saat menu terbuka) */
+.tombol-menu.active .garis:nth-child(1) {
+    transform: rotate(45deg) translateY(8px); /* Rotasi garis atas */
+}
+
+.tombol-menu.active .garis:nth-child(2) {
+    opacity: 0; /* Hilangkan garis tengah */
+}
+
+.tombol-menu.active .garis:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px); /* Rotasi garis bawah */
+}
+
+/* ======== Responsif untuk Layar Kecil ======== */
+@media (min-width: 990px) {
+    /* Tampilkan menu seperti biasa pada layar besar */
+    nav .menu ul {
+        display: flex; /* Baris horizontal */
+        flex-direction: row;
+        position: static; /* Posisi normal */
+        background-color: transparent; /* Transparan */
+        box-shadow: none; /* Hilangkan bayangan */
+        width: auto; /* Sesuaikan ukuran */
+        padding: 0;
+    }
+
+    /* Hilangkan tombol burger */
+    .tombol-menu {
+        display: none; /* Tombol tidak terlihat */
+    }
+}
+
+
+/* Tombol-menu aktif (animasi burger menjadi X) */
+.tombol-menu.active .garis:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.tombol-menu.active .garis:nth-child(2) {
+    opacity: 0;
+}
+
+.tombol-menu.active .garis:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section Styles */
+section {
+    padding: 30px 0px 50px 0px;
+    scroll-margin-top: 150px
+
+}
+
+section h3 {
+    font-size: 80px;
+}
+
+section h3::after {
+    content: "";
+    border-bottom: 5px solid #007c17;
+    width: 52px;
+    display: block;
+    margin: 20px auto;
+    padding: 0px 0px 20px 0px;
+}
+
+/* Section specific styles */
+#tentang, #berita {
+    text-align: center;
+}
+
+section p.ringkasan {
+    font-style: italic;
+    font-size: 20px;
+    color: #000000;
+}
+
+section p.konten-isi {
+    font-style: normal;
+}
+
+nav.putih {
+    background-color: #fff;
+}
+
+nav.putih .tombol-menu .garis {
+    background-color: #333;
+}
+
+nav.putih ul li a {
+    color: #333;
+}
+
+/* layanan */
+section.abuabu {
+    background-color: #343a40;
+    padding: 60px 0px 100px 0px;
+}
+
+.section.abuabu {
+    background-color: #bebebe;
+    padding: 60px 0px 100px 0px; /* Padding untuk atas dan bawah */
+}
+
+/* Layar Dalam */
+#layanan .layar-dalam {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styling untuk Support (Layanan) */
+.support {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px; /* Jarak antar elemen */
+}
+
+/* Setiap div dalam support */
+.support div {
+    flex: 1 1 calc(33.33% - 20px); /* Membagi menjadi 3 kolom, mengurangi jarak */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek hover pada tiap div */
+.support div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling gambar di dalam layanan */
+.support div img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+/* Styling untuk judul dan deskripsi dalam layanan */
+.support div h6 {
+    font-size: 1.2rem;
+    color: #007BFF;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.support div p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.support div a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 1024px) {
+    .support div {
+        flex: 1 1 calc(50% - 20px); /* Setiap elemen mengambil setengah lebar */
+    }
+}
+
+@media (max-width: 768px) {
+    .support div {
+        flex: 1 1 100%; /* Elemen mengambil seluruh lebar pada layar kecil */
+    }
+
+    .support {
+        gap: 20px;
+    }
+}
+
+
+
+
+
+/* Berita Section */
+#berita h3 {
+    font-size: 30px; /* Ukuran font */
+    font-family: poppins;
+    font-weight: bold; /* Tebal teks */
+    color: #000000; /* Warna teks */
+    text-align: center; /* Posisikan teks di tengah */
+    margin-bottom: 20px; /* Jarak bawah */
+    position: relative; /* Untuk menambahkan elemen dekorasi */
+}
+
+.kotak-berita-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.kotak-berita {
+    width: 300px;
+    background-color: #fff;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 5px 5px 8px 5px #0000001a;
+    transition: transform 0.3s ease;
+}
+
+
+.kotak-berita:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 15px 10px #00000026;
+}
+
+.kotak-berita .gambar {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.kotak-berita .text {
+    padding: 16px;
+}
+
+.kotak-berita .text h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.kotak-berita .text p {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 10px;
+}
+
+.kotak-berita .text a {
+    font-size: 14px;
+    color: #007c17;
+    text-decoration: none;
+}
+
+.kotak-berita .text a:hover {
+    text-decoration: underline;
+}
+
+/* Quote Section */
+section.quote {
+    background: url(asset/img/candiwulan.JPG);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    padding: 80px;
+}
+
+section.quote .layar-dalam p {
+    display: block;
+    font-size: 30px;
+    padding: 40px;
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px 0px 0px 0px;
+    background-color: #343a40;
+    color: #fff;
+}
+
+footer .layar-dalam {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer .layar-dalam div {
+    width: 20%;
+}
+
+footer .layar-dalam h5 {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer .layar-dalam .copyright {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    border-top: 2px solid #666;
+    text-align: center;
+}
+
+/* Responsive Styles for Smaller Screens */
+@media screen and (max-width: 991.98px) {
+    .layar-dalam {
+        width: 90%;
+    }
+
+    nav .menu ul {
+        display: none;
+        margin-top: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    nav .menu ul li a {
+        color: #333;
+    }
+
+    nav .menu ul li {
+        width: 100%;
+        border-bottom: 1px solid #CCC;
+        background-color: #fff;
+        line-height: 40px;
+    }
+
+    .tombol-menu {
+        display: flex;
+    }
+
+    .blog .area {
+        display: block;
+    }
+
+    .blog div.area div {
+        width: 100%;
+    }
+
+    .blog .area .gambar {
+        border-radius: 5px 5px 0px 0px;
+        height: 200px;
+    }
+
+    .support {
+        display: block;
+    }
+
+    .support div {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+}

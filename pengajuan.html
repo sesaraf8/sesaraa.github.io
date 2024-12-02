@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Diri</title>
+    <link rel="stylesheet" href="stylepengajuan.css">
+    <script>
+        // Fungsi untuk menampilkan pop-up
+        function showPopup(message, isSuccess) {
+            var popup = document.getElementById('popup');
+            var popupMessage = document.getElementById('popup-message');
+            popupMessage.textContent = message;
+            popup.style.display = 'block';
+
+            // Jika berhasil, beri warna hijau
+            if (isSuccess) {
+                popup.style.backgroundColor = 'green';
+            } else {
+                popup.style.backgroundColor = 'red';
+            }
+
+            // Menutup pop-up setelah 3 detik
+            setTimeout(function() {
+                popup.style.display = 'none';
+            }, 3000);
+        }
+
+        // Fungsi untuk menambahkan kelas 'active' dan mengatur nilai hidden input
+        function setActive(itemId) {
+            var selectedText = document.getElementById(itemId).textContent;
+            document.getElementById('jenis_surat').value = selectedText; // Set pilihan surat
+
+            // Menghapus kelas 'active' dari semua menu-item
+            var menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+
+            // Menambahkan kelas 'active' pada menu yang dipilih
+            document.getElementById(itemId).classList.add('active');
+        }
+
+        // Fungsi validasi form sebelum disubmit
+        function submitForm() {
+            var jenisSurat = document.getElementById('jenis_surat').value;
+            if (jenisSurat === '') {
+                alert('Silakan pilih jenis surat terlebih dahulu.');
+                return false; // Mencegah form disubmit
+            }
+            return true; // Melanjutkan pengiriman form
+        }
+    </script>
+</head>
+<body>
+
+    <a href="index.php" class="back-home">Back Home</a>
+
+    <div class="sidebar">
+        <h2>Pengajuan Surat</h2>
+
+        <ul class="menu-list">
+            <li><a href="#" class="menu-item" id="item1" onclick="setActive('item1')">Surat Keterangan Tidak Mampu (Sekolah)</a></li>
+            <li><a href="#" class="menu-item" id="item2" onclick="setActive('item2')">Surat Keterangan Tidak Mampu (Umum)</a></li>
+            <li><a href="#" class="menu-item" id="item3" onclick="setActive('item3')">Surat Keterangan Rumah Tangga Miskin Sekali</a></li>
+            <li><a href="#" class="menu-item" id="item4" onclick="setActive('item4')">Surat Keterangan Penghasilan Orang Tua</a></li>
+            <li><a href="#" class="menu-item" id="item5" onclick="setActive('item5')">Permohonan Izin Acara</a></li>
+            <li><a href="#" class="menu-item" id="item6" onclick="setActive('item6')">Surat Pengantar SKCK</a></li>
+            <li><a href="#" class="menu-item" id="item7" onclick="setActive('item7')">Surat Keterangan Ahli Waris</a></li>
+            <li><a href="#" class="menu-item" id="item8" onclick="setActive('item8')">Surat Keterangan Bepergian</a></li>
+            <li><a href="#" class="menu-item" id="item9" onclick="setActive('item9')">Surat Keterangan Tidak Berada di Tempat</a></li>
+            <li><a href="#" class="menu-item" id="item10" onclick="setActive('item10')">Surat Keterangan Beda Identitas</a></li>
+        </ul>
+        
+    </div>
+    <div class="content">
+        <h1>Selamat Datang di Pengajuan Surat</h1>
+        <p>Silakan pilih jenis surat yang ingin diajukan melalui menu di sebelah kiri.</p>
+    </div>
+
+    <main>
+        <section id="data-diri">
+            <div class="layar-dalam">
+                <h3>Formulir Data Diri</h3>
+                <h3>Isi form di bawah ini untuk mengisi data diri Anda.</h3>
+
+                <!-- Pop-up Message -->
+                <div id="popup" style="display:none; padding: 20px; color: white; text-align: center;">
+                    <span id="popup-message"></span>
+                </div>
+
+                <form action="data_diri.php" method="POST" enctype="multipart/form-data" onsubmit="return submitForm()">
+                    <table>
+                        <tr>
+                            <td>Nik:</td>
+                            <td><input type="text" name="nik" required></td>
+                        </tr>
+                        <tr>
+                            <td>Nama Lengkap:</td>
+                            <td><input type="text" name="nama" required></td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Kelamin:</td>
+                            <td>
+                                <label>
+                                    <input type="radio" name="jenis_kelamin" value="Laki-Laki" required> Laki-Laki
+                                </label>
+                                <label>
+                                    <input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tempat Lahir:</td>
+                            <td><input type="text" name="tempat_lahir" required></td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Lahir:</td>
+                            <td><input type="date" name="tanggal_lahir" required></td>
+                        </tr>
+                        <tr>
+                            <td>Agama:</td>
+                            <td><input type="text" name="agama" required></td>
+                        </tr>
+                        <tr>
+                            <td>Pekerjaan:</td>
+                            <td><input type="text" name="pekerjaan" required></td>
+                        </tr>
+                        <tr>
+                            <td>Alamat:</td>
+                            <td><input type="text" name="alamat" required></td>
+                        </tr>
+                        <tr>
+                            <td>File KTP:</td>
+                            <td><input type="file" name="file_ktp" required></td>
+                        </tr>
+                        <tr>
+                            <td>File Kartu Keluarga:</td>
+                            <td><input type="file" name="file_kk" required></td>
+                        </tr>
+                        <!-- Hidden input untuk jenis surat -->
+                        <input type="hidden" name="jenis_surat" id="jenis_surat">
+
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Kirim Data Diri"></td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+
+    <script src="pengajuan.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin-left: 250px; /* Space for sidebar */
+    transition: margin-left 0.3s ease;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #007c17;
+    color: white;
+    padding-top: 30px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease-in-out;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #004b0e #002a08;
+}
+
+/* Sidebar Header */
+.sidebar h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ecf0f1;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 20px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 18px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #004b0e;
+    padding-left: 10px;
+}
+
+.sidebar ul li a.active {
+    background-color: #004b0e;
+    font-weight: bold;
+}
+
+/* Content Area Styling */
+.content {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    transition: margin-left 0.3s ease;
+}
+
+/* Header in Content */
+.content h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000; /* Green color for main title */
+    font-weight: 600;
+}
+
+/* Paragraph in Content */
+.content p {
+    font-size: 18px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 15px;
+    color: #000000; /* Green color for subheadings */
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 5%; /* Align text with table */
+}
+
+/* Main Table Styling */
+table {
+    width: 90%; /* Adjust table width */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Table Header */
+th {
+    background-color: #4CAF50; /* Green color for table header */
+    color: white;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Table Cells */
+td {
+    padding: 15px 30px;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Row Hover Effect */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Alternating Row Background */
+tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="date"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    outline: none;
+}
+
+/* Button Styling */
+button,
+input[type="submit"] {
+    background-color: #4CAF50; /* Green background for all buttons */
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    width: 100%; /* Full width for buttons */
+    text-align: center;
+}
+
+/* Hover Effect */
+button:hover,
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Active State (When Clicked) */
+button:active,
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    background-color: #3e8e41; /* Darker green when clicked */
+}
+
+/* Focus State */
+button:focus,
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 239, 128, 0.5); /* Green glow on focus */
+}
+
+/* Responsiveness for Buttons */
+@media (max-width: 768px) {
+    button,
+    input[type="submit"] {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+
+.back-home {
+    position: fixed; /* Menempatkan tombol tetap pada layar */
+    top: 20px; /* Jarak 20px dari atas */
+    right: 20px; /* Jarak 20px dari kanan */
+    background-color: #dc3545; /* Warna hijau */
+    color: white; /* Warna teks */
+    padding: 10px 20px; /* Ukuran tombol */
+    border-radius: 5px; /* Membulatkan sudut tombol */
+    text-decoration: none; /* Hilangkan garis bawah */
+    font-size: 14px; /* Ukuran teks */
+    font-weight: bold; /* Tebalkan teks */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan */
+    z-index: 1000; /* Pastikan tombol di atas elemen lain */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+    transition: background-color 0.3s ease; /* Animasi saat hover */
+}
+
+.back-home:hover {
+    background-color: #c82333; /* Ubah warna hijau saat dihover */
+}
+
+/* Responsiveness for Sidebar and Content */
+@media (max-width: 1024px) {
+    body {
+        margin-left: 200px; /* Sesuaikan margin untuk layar lebih kecil */
+    }
+    .sidebar {
+        width: 200px; /* Sesuaikan lebar sidebar */
+    }
+    .sidebar h2 {
+        font-size: 22px; /* Sesuaikan ukuran teks judul */
+    }
+    .sidebar ul li a {
+        font-size: 16px; /* Sesuaikan ukuran teks menu */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        margin-left: 0; /* Hilangkan margin untuk sidebar */
+    }
+    .sidebar {
+        width: 100%; /* Sidebar menjadi full-width */
+        height: auto; /* Sesuaikan tinggi sidebar */
+        position: relative; /* Tidak tetap di posisi */
+        box-shadow: none; /* Hilangkan bayangan */
+    }
+    .content {
+        padding: 15px; /* Sesuaikan padding konten */
+    }
+    h3 {
+        font-size: 14px; /* Kurangi ukuran subheading */
+    }
+    table {
+        font-size: 14px; /* Kurangi ukuran font pada tabel */
+    }
+    th, td {
+        padding: 10px; /* Kurangi padding pada tabel */
+    }
+    button,
+    input[type="submit"] {
+        font-size: 14px; /* Sesuaikan ukuran tombol */
+        padding: 8px 12px; /* Kurangi padding tombol */
+    }
+}
+
+@media (max-width: 480px) {
+    .kotak-berita-container {
+        flex-direction: column; /* Susun berita vertikal untuk layar kecil */
+        align-items: center; /* Pusatkan berita */
+    }
+    .kotak-berita {
+        width: 100%; /* Kotak berita penuh layar */
+        max-width: 90%; /* Berikan margin untuk sisi layar */
+    }
+    .kotak-berita .gambar {
+        height: 150px; /* Sesuaikan tinggi gambar */
+    }
+    h3 {
+        font-size: 12px; /* Kurangi ukuran subheading */
+    }
+    table {
+        font-size: 12px; /* Kurangi ukuran font tabel */
+    }
+    th, td {
+        padding: 8px; /* Kurangi padding tabel */
+    }
+    button,
+    input[type="submit"] {
+        font-size: 12px; /* Sesuaikan ukuran tombol */
+        padding: 6px 10px; /* Kurangi padding tombol */
+    }
+    .back-home {
+        font-size: 12px; /* Sesuaikan ukuran tombol back-home */
+        padding: 8px 10px; /* Kurangi padding */
+    }
+}

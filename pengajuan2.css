@@ -1,0 +1,183 @@
+/* Styling untuk body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6; /* Warna latar belakang halaman */
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling untuk form container */
+.form-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #0000001a;
+}
+
+.form-container h3 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-container p {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Styling untuk tabel di form */
+.form-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.form-container table td {
+    padding: 12px;
+    font-size: 16px;
+    color: #555;
+}
+
+.form-container table input[type="text"],
+.form-container table input[type="date"],
+.form-container table textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    margin-top: 6px;
+}
+
+/* Styling untuk tombol Kirim Data Diri */
+.form-container table input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Transisi yang halus */
+    margin-top: 20px;
+}
+
+/* Hover Effect untuk tombol Kirim Data Diri */
+.form-container table input[type="submit"]:hover {
+    background: linear-gradient(135deg, #45a049, #4CAF50); /* Gradasi terbalik */
+    transform: translateY(-3px) scale(1.03); /* Tombol sedikit naik dan membesar */
+    box-shadow: 0 6px 10px #00000033; /* Bayangan lebih besar */
+}
+
+/* Active State (Saat Diklik) */
+.form-container table input[type="submit"]:active {
+    transform: translateY(0); /* Kembali ke posisi semula */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Bayangan lebih kecil */
+    background: #3e8e41; /* Warna lebih gelap */
+    transition: all 0.2s ease-in-out; /* Transisi lebih cepat */
+}
+
+/* Focus State */
+.form-container table input[type="submit"]:focus {
+    outline: none; /* Hilangkan outline default */
+    box-shadow: 0 0 0 3px rgba(72, 239, 128, 0.5); /* Glow hijau */
+    transition: box-shadow 0.3s ease-in-out; /* Efek glow halus */
+}
+
+/* Styling untuk kotak pengaduan */
+.complaint-box {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #0000001a;
+}
+
+.complaint-box h3 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Styling untuk textarea pengaduan */
+.complaint-box textarea {
+    width: 100%;
+    height: 350px; /* Lebih besar untuk memberi ruang */
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    resize: vertical; /* Hanya bisa diresize secara vertikal */
+    margin-top: 6px;
+    color: #333;
+}
+
+.complaint-box textarea:focus {
+    border-color: #4CAF50; /* Warna border berubah saat fokus */
+    outline: none; /* Hilangkan outline default */
+}
+
+/* Styling untuk teks dalam textarea */
+textarea::placeholder {
+    color: #aaa;
+}
+
+.back-home {
+    position: fixed; /* Menempatkan tombol tetap pada layar */
+    top: 20px; /* Jarak 20px dari atas */
+    right: 20px; /* Jarak 20px dari kanan */
+    background-color: #dc3545; /* Warna hijau */
+    color: white; /* Warna teks */
+    padding: 10px 20px; /* Ukuran tombol */
+    border-radius: 5px; /* Membulatkan sudut tombol */
+    text-decoration: none; /* Hilangkan garis bawah */
+    font-size: 14px; /* Ukuran teks */
+    font-weight: bold; /* Tebalkan teks */
+    box-shadow: 0 2px 5px #00000080; /* Tambahkan bayangan */
+    z-index: 1000; /* Pastikan tombol di atas elemen lain */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+    transition: background-color 0.3s ease; /* Animasi saat hover */
+}
+
+.back-home:hover {
+    background-color: #c82333; /* Ubah warna hijau saat dihover */
+}
+
+
+/* Styling untuk responsivitas */
+@media (max-width: 768px) {
+    .form-container,
+    .complaint-box {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .form-container h3,
+    .complaint-box h3 {
+        font-size: 20px;
+    }
+
+    .form-container table td {
+        font-size: 14px;
+    }
+
+    .form-container table input[type="submit"] {
+        font-size: 16px;
+    }
+}
+
+

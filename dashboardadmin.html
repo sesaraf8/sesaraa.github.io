@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="dashboardstyle.css"> <!-- Tambahkan CSS jika diperlukan -->
+</head>
+
+<body>
+    
+    <header>
+        <h1>Dashboard Admin</h1>
+        <p>Selamat datang, <span id="username"></span>!</p>
+        <a href="logout.php">Logout</a>
+    </header>
+
+    <!-- Tombol Menu -->
+    <div class="navbar">
+        <button onclick="showMenu('menu1')" id="btnMenu1" class="active">PENGAJUAN</button>
+        <button onclick="showMenu('menu2')" id="btnMenu2">PENGADUAN</button>
+        <button onclick="showMenu('menu3')" id="btnMenu3">BERITA</button>
+    </div>
+
+    <!-- Menu 1: Data Pengajuan -->
+    <main id="menu1" class="menu-content">
+        <h2>Data Pengajuan</h2>
+        <table border="1" cellspacing="0" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>NIK</th>
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Agama</th>
+                    <th>Pekerjaan</th>
+                    <th>Alamat</th>
+                    <th>Jenis Surat</th>
+                    <th>File KTP</th>
+                    <th>File KK</th>
+                    <th>konfirmasi</th>
+                </tr>
+            </thead>
+            <tbody id="dataTable">
+                <!-- Data akan dimuat dari fetch_data.php -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Menu 2: Pengaduan -->
+    <main id="menu2" class="menu-content" style="display: none;">
+        <h2>Data Pengaduan</h2>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>NIK</th>
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Alamat</th>
+                    <th>Pengaduan</th>
+                    <th>Tanggal Pengaduan</th>
+                    <th>konfirmasi</th>
+                </tr>
+            </thead>
+            <tbody id="pengaduanTable">
+                <!-- Data akan dimuat dari fetch_pengaduan.php -->
+            </tbody>
+        </table>
+    </main>
+
+    
+
+        <!-- Formulir Berita 1 -->
+    <main id="menu3" class="menu-content" style="display: block;">
+        <h2>Manajemen Berita</h2>
+    
+
+        <form action="manajemen_berita.php" method="POST" enctype="multipart/form-data">
+            <table class="berita1">
+                <thead>
+                    <tr>
+                        <th colspan="2">Formulir Berita 1</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="title1">Judul:</label></td>
+                        <td><input type="text" id="judul" name="judul" placeholder="Masukkan judul berita" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="description1">Deskripsi:</label></td>
+                        <td><textarea id="isi" name="isi" rows="4" placeholder="Masukkan deskripsi berita" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="image1">Gambar:</label></td>
+                        <td><input type="file" id="gambar" name="gambar" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="hidden" name="id" value="1"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="button-group">
+                            <button type="submit" name="action" value="add">Tambah</button>
+                            <button type="submit" name="action" value="update">Update</button>
+                            <button type="submit" name="action" value="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    
+        <!-- Formulir Berita 2 -->
+        <form action="manajemen_berita.php" method="POST" enctype="multipart/form-data">
+            <table class="berita2">
+                <thead>
+                    <tr>
+                        <th colspan="2">Formulir Berita 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="title2">Judul:</label></td>
+                        <td><input type="text" id="judul" name="judul" placeholder="Masukkan judul berita" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="description2">Deskripsi:</label></td>
+                        <td><textarea id="isi" name="isi" rows="4" placeholder="Masukkan deskripsi berita" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="image2">Gambar:</label></td>
+                        <td><input type="file" id="gambar" name="gambar" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="hidden" name="id" value="2"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="button-group">
+                            <button type="submit" name="action" value="add">Tambah</button>
+                            <button type="submit" name="action" value="update">Update</button>
+                            <button type="submit" name="action" value="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    
+        <!-- Formulir Berita 3 -->
+        <form action="manajemen_berita.php" method="POST" enctype="multipart/form-data">
+            <table class="berita3">
+                <thead>
+                    <tr>
+                        <th colspan="2">Formulir Berita 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="title3">Judul:</label></td>
+                        <td><input type="text" id="judul" name="judul" placeholder="Masukkan judul berita" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="description3">Deskripsi:</label></td>
+                        <td><textarea id="isi" name="isi" rows="4" placeholder="Masukkan deskripsi berita" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="image3">Gambar:</label></td>
+                        <td><input type="file" id="gambar" name="gambar" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="hidden" name="id" value="3"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="button-group">
+                            <button type="submit" name="action" value="add">Tambah</button>
+                            <button type="submit" name="action" value="update">Update</button>
+                            <button type="submit" name="action" value="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </main>
+
+    <script src="javascript.js"></script>
+
+
+    <script>
+        // Muat username dari PHP menggunakan fetch
+        fetch('fetch_username.php')
+            .then(response => response.text())
+            .then(username => {
+                document.getElementById('username').textContent = username;
+            });
+
+        // Muat data tabel untuk Menu 1
+        fetch('fetch_data.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('dataTable').innerHTML = data;
+            });
+
+        // Muat data tabel untuk Menu 2
+        fetch('fetch_pengaduan.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('pengaduanTable').innerHTML = data;
+            });
+
+          // Muat data tabel untuk Menu 3
+          fetch('fetch_berita.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('beritaTable').innerHTML = data;
+            });
+
+
+
+        // Fungsi untuk menampilkan menu yang dipilih
+        function showMenu(menuId) {
+            const menus = document.querySelectorAll('.menu-content');
+            const buttons = document.querySelectorAll('.menu-buttons button');
+
+            // Sembunyikan semua menu
+            menus.forEach(menu => menu.style.display = 'none');
+            // Hapus status aktif dari semua tombol
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Tampilkan menu yang dipilih
+            document.getElementById(menuId).style.display = 'block';
+            // Tambahkan status aktif pada tombol yang dipilih
+            document.querySelector(`#btn${menuId.charAt(0).toUpperCase() + menuId.slice(1)}`).classList.add('active');
+        }
+
+        // Tampilkan menu pertama saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            showMenu('menu1');
+        });
+    </script>
+
+    <script>
+        // Ambil semua tombol di navbar
+        const navbarButtons = document.querySelectorAll('.navbar button');
+
+        // Tambahkan event listener ke setiap tombol
+        navbarButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                // Hapus kelas 'active' dari semua tombol
+                navbarButtons.forEach((btn) => btn.classList.remove('active'));
+
+                // Tambahkan kelas 'active' ke tombol yang diklik
+                button.classList.add('active');
+            });
+        });
+    </script>
+
+
+
+</body>
+</html>

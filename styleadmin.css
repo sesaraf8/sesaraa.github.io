@@ -1,0 +1,123 @@
+/* Mengatur body dan seluruh elemen untuk tampilan full screen */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Container untuk background video */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Agar video berada di belakang overlay */
+}
+
+
+/* Overlay transparan di atas video */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Warna hitam dengan transparansi 50% */
+    z-index: -1; /* Overlay berada di atas video tetapi di bawah konten */
+}
+
+/* Styling untuk login form */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8); /* Putih dengan transparansi */
+    color: #333;
+    padding: 30px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    width: 320px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    color: #333;
+}
+
+.login-container input[type="text"], 
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.login-container input[type="text"]:focus, 
+.login-container input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007c17;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.login-container button:hover {
+    background-color: #00510f;
+}
+
+.back-home {
+    position: fixed; /* Menempatkan tombol tetap pada layar */
+    top: 20px; /* Jarak 20px dari atas */
+    right: 20px; /* Jarak 20px dari kanan */
+    background-color: #dc3545; /* Warna hijau */
+    color: white; /* Warna teks */
+    padding: 10px 20px; /* Ukuran tombol */
+    border-radius: 5px; /* Membulatkan sudut tombol */
+    text-decoration: none; /* Hilangkan garis bawah */
+    font-size: 14px; /* Ukuran teks */
+    font-weight: bold; /* Tebalkan teks */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan */
+    z-index: 1000; /* Pastikan tombol di atas elemen lain */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+    transition: background-color 0.3s ease; /* Animasi saat hover */
+}
+
+.back-home:hover {
+    background-color: #c82333; /* Ubah warna hijau saat dihover */
+}
+
+
+

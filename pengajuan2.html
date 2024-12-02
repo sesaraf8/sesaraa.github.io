@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Diri dan Pengaduan</title>
+    <link rel="stylesheet" href="pengajuan2.css">
+
+    <script>
+        function showSuccessNotification() {
+            alert("Data berhasil disimpan!");
+            window.location.href = "index.php";
+        }
+    
+        function showErrorNotification(errorMessage) {
+            alert("Terjadi kesalahan: " + errorMessage);
+        }
+    </script>
+    
+
+</head>
+<body>
+
+    <a href="index.php" class="back-home">Back Home</a>
+
+    <!-- Formulir Data Diri dan Pengaduan (Gabung menjadi satu) -->
+    <div class="form-container">
+        <h3>Formulir Data Diri dan Pengaduan</h3>
+        <p>Isi form di bawah ini untuk mengisi data diri Anda dan pengaduan Anda.</p>
+
+        <form action="proses_pengaduan.php" method="POST" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td>Judul:</td>
+                    <td><input type="text" name="nik" required></td>
+                </tr>
+                <tr>
+                    <td>Isi:</td>
+                    <td><input type="text" name="nama" required></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin:</td>
+                    <td>
+                        <label>
+                            <input type="radio" name="jenis_kelamin" value="Laki-Laki" required> Laki-Laki
+                        </label>
+                        <label>
+                            <input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tempat Lahir:</td>
+                    <td><input type="text" name="tempat_lahir" required></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir:</td>
+                    <td><input type="date" name="tanggal_lahir" required></td>
+                </tr>
+                <tr>
+                    <td>Alamat:</td>
+                    <td><input type="text" name="alamat" required></td>
+                </tr>
+
+                <!-- Kotak Pengaduan -->
+                <tr>
+                    <td>Isi Pengaduan:</td>
+                    <td><textarea name="pengaduan" rows="5" placeholder="Tuliskan pengaduan Anda di sini..." required></textarea></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><input type="submit" value="Kirim Data Diri dan Pengaduan"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

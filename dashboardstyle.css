@@ -1,0 +1,375 @@
+/* Reset Gaya Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tampilan Umum */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: left;
+    padding: 10px 20px;
+    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar button {
+    background-color: white;
+    color: #4CAF50;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+.navbar button.active {
+    background-color: #2e7d32;
+    color: white;
+    font-weight: bold;
+}
+
+/* Main Section */
+main {
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Tabel Pengaduan dan Pengajuan */
+table {
+    width: 90%; /* Lebar tabel lebih besar, 90% dari lebar halaman */
+    max-width: 1200px; /* Membatasi lebar maksimum menjadi 1200px */
+    margin: 0 auto; /* Menyusun tabel di tengah halaman */
+    padding: 0;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+/* Gaya untuk sel-sel tabel */
+th, td {
+    padding: 10px 15px; /* Menambahkan padding yang lebih kecil */
+    text-align: center;
+    border-bottom: 1px solid #ffffff;
+    font-size: 0.9rem; /* Ukuran font lebih kecil */
+    vertical-align: middle;
+    word-wrap: break-word; /* Membungkus teks jika panjang */
+    max-width: 160px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Tombol Aksi di dalam tabel */
+button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #4CAF50;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Mengubah warna saat hover */
+    transform: translateY(-2px);
+}
+
+/* Responsivitas untuk Tabel di perangkat kecil */
+@media (max-width: 768px) {
+    table {
+        width: 95%; /* Lebar tabel lebih kecil di perangkat mobile */
+    }
+
+    th, td {
+        padding: 8px 12px; /* Padding lebih kecil */
+        font-size: 0.85rem; /* Ukuran font sedikit lebih kecil */
+    }
+
+    button {
+        padding: 8px 12px; /* Tombol lebih kecil pada layar kecil */
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Form Input */
+.news-input-table {
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px 20px;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.news-input-table th {
+    background-color: #4CAF50;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.news-input-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.news-input-table td label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.news-input-table td input[type="text"],
+.news-input-table td textarea,
+.news-input-table td input[type="file"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-input-table td input[type="text"]:focus,
+.news-input-table td textarea:focus,
+.news-input-table td input[type="file"]:focus {
+    border-color: #4CAF50;
+    padding: 15px 20px;
+    box-shadow: 0 0 5px #4caf5066;
+    outline: none;
+}
+
+.news-input-table td textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Tombol Aksi */
+.news-input-table .button-group {
+    text-align: right;
+    padding: 15px 20px;
+}
+
+.news-input-table .button-group button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #4CAF50; /* Set all buttons to green */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.news-input-table .button-group button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .news-input-table,
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .news-input-table .button-group button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .news-input-table .button-group {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Tombol Logout */
+a[href="logout.php"] {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+a[href="logout.php"]:hover {
+    background-color: #c82333;
+}
+
+
+
+
+/* Tombol Konfirmasi Selesai */
+.btn-konfirmasi, .btn-hapus {
+    display: inline-block;
+    background-color: #28a745; /* Hijau (default Konfirmasi) */
+    color: white;
+    padding: 10px 15px; /* Ukuran padding sama */
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px; /* Ukuran font sama */
+    border: 1px solid; /* Warna border diatur per tombol */
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+    min-width: 80px; /* Pastikan lebar tombol minimal */
+}
+
+/* Gaya tombol Konfirmasi */
+.btn-konfirmasi {
+    background-color: #28a745; /* Hijau */
+    border-color: #28a745;
+}
+
+.btn-konfirmasi:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: scale(1.05);
+}
+
+.btn-konfirmasi:active {
+    transform: scale(1);
+}
+
+/* Gaya tombol Hapus */
+.btn-hapus {
+    background-color: #dc3545; /* Merah */
+    border-color: #dc3545;
+}
+
+.btn-hapus:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: scale(1.05);
+}
+
+.btn-hapus:active {
+    transform: scale(1);
+}
+
+/* Tampilkan tombol di satu kolom */
+td a {
+    display: inline-block; /* Untuk membuat tombol sejajar */
+    margin-right: 5px; /* Jarak antar tombol horizontal */
+    margin-bottom: 5px; /* Jarak antar tombol jika vertikal */
+}
+
+
+/* Gaya umum untuk tombol di tabel */
+td a {
+    display: inline-block; /* Membuat tombol inline */
+    padding: 10px 15px; /* Padding untuk ruang tombol */
+    font-size: 0.9rem; /* Ukuran font tombol */
+    font-weight: bold; /* Tulisan lebih tebal */
+    color: white; /* Warna teks putih */
+    text-decoration: none; /* Hilangkan garis bawah */
+    border-radius: 5px; /* Sudut membulat */
+    background-color: #28a745; /* Warna hijau tombol */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efek transisi */
+}
+
+/* Hover effect untuk tombol */
+td a:hover {
+    background-color: #1e7e34; /* Warna hijau lebih gelap saat hover */
+    transform: scale(1.05); /* Sedikit membesar saat hover */
+}
+
+/* Responsivitas untuk tombol */
+@media (max-width: 768px) {
+    td a {
+        padding: 8px 10px; /* Padding lebih kecil pada layar kecil */
+        font-size: 0.85rem; /* Ukuran font lebih kecil */
+    }
+}

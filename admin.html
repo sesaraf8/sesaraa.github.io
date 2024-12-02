@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin</title>
+    <link rel="stylesheet" href="styleadmin.css"> <!-- Untuk CSS jika ada -->
+</head>
+<body>
+
+    <a href="index.php" class="back-home">Back Home</a>
+
+    <main>
+        <!-- Background Video -->
+        <div class="video-background">
+            <video id="background-video" autoplay muted loop>
+                <source src="asset/video/Droneview.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <!-- Overlay Transparan -->
+        <div class="overlay"></div>
+        
+        <!-- Login Form -->
+        <div class="login-container">
+            <h2>Login Admin</h2>
+            <form action="prosesadmin.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+            
+        </div>
+    </main>
+    
+</body>
+</html>

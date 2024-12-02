@@ -1,0 +1,104 @@
+/* Reset dan container */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.6em;
+}
+
+/* Tabel */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.table thead tr {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+}
+
+.table th, .table td {
+    padding: 8px 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    .table th, .table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* Status Selesai (Hijau) */
+.status-selesai {
+    color: white;
+    background-color: #28a745; /* Hijau */
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Status Proses (Kuning) */
+.status-proses {
+    color: white;
+    background-color: #ffc107; /* Kuning */
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+
+
+.back-home {
+    position: fixed; /* Menempatkan tombol tetap pada layar */
+    top: 20px; /* Jarak 20px dari atas */
+    right: 20px; /* Jarak 20px dari kanan */
+    background-color: #d32f2f; /* Warna hijau */
+    color: white; /* Warna teks */
+    padding: 10px 20px; /* Ukuran tombol */
+    border-radius: 5px; /* Membulatkan sudut tombol */
+    text-decoration: none; /* Hilangkan garis bawah */
+    font-size: 14px; /* Ukuran teks */
+    font-weight: bold; /* Tebalkan teks */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan */
+    z-index: 1000; /* Pastikan tombol di atas elemen lain */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+    transition: background-color 0.3s ease; /* Animasi saat hover */
+}
+
+.back-home:hover {
+    background-color: #a80707; /* Ubah warna hijau saat dihover */
+}
